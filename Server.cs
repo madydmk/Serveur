@@ -74,7 +74,8 @@ namespace Serveur
         public static String ExecReq(String req)
         {
             string connectionString =
-            "Server = LAPTOP-AIVT04E6\\SQLEXPRESS; Database = SQL_ACADEMY; Trusted_Connection = True; MultipleActiveResultSets = true";
+            //"Server = LAPTOP-AIVT04E6\\SQLEXPRESS; Database = SQL_ACADEMY; Trusted_Connection = True; MultipleActiveResultSets = true";
+            "Server = XFIPARLTPUSR009\\SQLACADEMY; Database = SQL_ServeurClient;User Id=Mady; Password=Diakitem1.;";
             //LAPTOP-AIVT04E6\SQLEXPRESS
             String result = "";
             using (SqlConnection connection =
@@ -92,7 +93,7 @@ namespace Serveur
                         while(i < reader.FieldCount)
                             {
                             String a = reader.GetName(i);
-                            result = reader[i].ToString() + ";";
+                            result += a + ": " + reader[i].ToString() + ";";
                             i+=1; 
                             }
                         result += "¤";
